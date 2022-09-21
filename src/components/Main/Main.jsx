@@ -6,6 +6,9 @@ import Contact from './Contact';
 import Home from './Home';
 import NotFound from '../NotFound';
 import Staff from './Staff';
+import Donations from './Donations';
+import Djs from './Djs';
+import Topics from './Topics';
 
 export class Main extends Component {
   render() {
@@ -17,6 +20,9 @@ export class Main extends Component {
           <Route element={<Home />} path={"/"} />
           <Route element={<ProductList />} path={"/products"} />
           <Route element={<Staff />} path={"/staff"} />
+          <Route element={<Donations />} path={"/donations"} />
+          <Route element={<Djs />} path={"/donations"} />
+          <Route element={<Topics />} path={"/donations"} />
           <Route element={<NotFound />} path={"/*"} />
         </Routes>
       </main>
