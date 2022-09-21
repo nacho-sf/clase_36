@@ -19,6 +19,16 @@ export class ProductList extends Component {
     }
   }
 
+  // Se lanza cada vez que se actualize
+  componentDidUpdate(prevProps, prevState) {
+    if(this.state.products.length !== prevState.products.length){
+      alert("Número de productos: "+this.state.products.length);
+    }
+    else{
+      alert("Nueva sugerencia: "+this.state.suggestion);
+    }
+  } 
+
   paintProducts = () => this.state.products.map((product, i) => <ProductItem data={product} key={uuidv4()} delete={()=>this.deleteProduct(i)}/>);
 
   deleteProducts = () => this.setState({products:[]});

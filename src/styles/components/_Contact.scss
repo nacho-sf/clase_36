@@ -1,0 +1,14 @@
+@import '../utils/mixins.scss';
+
+.contact {
+
+    @include column-centered-content;
+
+    &>form {
+        @include contact-content;
+        
+        &>label {
+            margin: 5px;
+        }
+    }
+}
