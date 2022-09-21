@@ -21,8 +21,8 @@ export class Main extends Component {
           <Route element={<ProductList />} path={"/products"} />
           <Route element={<Staff />} path={"/staff"} />
           <Route element={<Donations />} path={"/donations"} />
-          <Route element={<Djs />} path={"/donations"} />
-          <Route element={<Topics />} path={"/donations"} />
+          <Route element={<Djs />} path={"/djs"} />
+          <Route element={<Topics />} path={"/topics"} />
           <Route element={<NotFound />} path={"/*"} />
         </Routes>
       </main>
