@@ -5,6 +5,7 @@ import Pokemon from './Pokemon'
 class Staff extends Component {
     constructor(props) {
         super(props);
+        
         this.state = { pokeLista: this.props.defaultList }
         // Event binding (Bindear eventos)
         console.log('CONSTRUCTOR')

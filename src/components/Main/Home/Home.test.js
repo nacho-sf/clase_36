@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import Home from './Home';
 
 describe("Home", () => {
     test("matches snapshot", () => {
-        const wrapper = shallow(<Home />);
-        expect(wrapper).toMatchSnapshot();
+        render(<Home />);
+        expect(screen).toMatchSnapshot();
     });
 });

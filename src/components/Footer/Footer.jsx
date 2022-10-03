@@ -1,11 +1,13 @@
-import React, { Component } from 'react'
+import React, { useContext } from 'react'
+import {themeContext} from '../../context/themeContext'
 
-export class Footer extends Component {
-  render() {
-    return (
-      <footer>Esto es el Footer</footer>
-    )
-  }
+
+function Footer() {
+  const {theme} = useContext(themeContext); // Consumer
+
+  return (
+    <footer className={"footer"+theme}>Developed with love by Full Stack @ The Bridge</footer>
+  )
 }
 
 export default Footer

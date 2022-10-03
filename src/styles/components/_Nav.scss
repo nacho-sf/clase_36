@@ -1,10 +1,9 @@
 @import '../utils/variables.scss';
 
-.nav-bar {
+%nav-bar-basic{
     display: flex;
     justify-content: space-evenly;
     padding: 15px;
-    background-color: $granate;
 
     &>* {
         color: white;
@@ -20,4 +19,14 @@
     &>span {
         font-weight: bold;
     }
+}
+
+.nav-bar {
+    @extend %nav-bar-basic;
+    background-color: $granate;
+}
+
+.nav-bar__dark{
+    @extend %nav-bar-basic;
+    background-color: $purple;
 }

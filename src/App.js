@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import '../src/styles/styles.scss'
 
 import {userContext} from './context/userContext';
+import {themeContext} from './context/themeContext';
 
 
 
@@ -16,29 +17,37 @@ function App() {
 
   const [user, setUser] = useState("Guille"); // state para componente funcional
 
-  const login = (name) => {
-    setUser(name); // user = name. Ej: name="Guille" --> user = "Guille"
-  }
+  const [theme, setTheme] = useState("__dark"); // state para theme
 
-  const logout = () => {
-    setUser(""); // user = ""
-  }
+  const login = (name) => setUser(name); // user = name. Ej: name="Guille" --> user = "Guille"
+
+  const logout = () => setUser(""); // user = ""
+
+  const toggleTheme = () => theme===""?setTheme("__dark"):setTheme("");
 
   const data = {
     user,
     login,
-    logout
+    logout,
+    toggleTheme
+  }
+
+  const themeData = {
+    theme, // __dark o ""
+    toggleTheme
   }
 
   return (
     <div className="App">
-      <BrowserRouter>
-      <userContext.Provider value={data}>
-        <Header />
-        <Main />
-        </userContext.Provider>
-      </BrowserRouter>
-      <Footer />
+      <themeContext.Provider value={themeData}>      
+        <BrowserRouter>
+          <userContext.Provider value={data}>
+            <Header />
+            <Main />
+          </userContext.Provider>
+        </BrowserRouter>
+        <Footer />
+      </themeContext.Provider>
     </div>
   );
 }

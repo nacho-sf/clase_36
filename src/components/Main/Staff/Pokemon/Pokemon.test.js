@@ -1,10 +1,11 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from '@testing-library/react';
 import Pokemon from "./Pokemon";
 
 describe("Pokemon", () => {
+  const pokemon = {name:"Mew", url:"https://pokeapi.co/api/v2/pokemon/mew"};
   test("matches snapshot", () => {
-    const wrapper = shallow(<Pokemon />);
-    expect(wrapper).toMatchSnapshot();
+    render(<Pokemon data={pokemon} />);
+    expect(screen).toMatchSnapshot();
   });
 });
